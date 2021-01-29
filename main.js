@@ -27,7 +27,7 @@ let random = Math.floor(Math.random() * answers.length+1);
 
 function changeText(){
     document.getElementById("answer").innerHTML = answers[random];
-    random = Math.floor(Math.random() * answers.length+1); 
+    random = Math.floor(Math.random() * answers.length); 
     console.log(random);
     console.log(answers[random]);
 

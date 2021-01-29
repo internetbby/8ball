@@ -1,45 +1,65 @@
-*{
-    margin:0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-
-body{
-    background-color: lightgray;
-    display: grid;
-    grid-template-columns: [header] 1fr [main] 600px [mainend] 1fr [ending];
-    grid-template-rows:[header] 1fr[textArea] 2fr [main] 600px [mainend] 1fr [ending];
-
-    width: 100vw;
-    height: 100vh;
+@media  screen and (max-width: 600px) {
+  body {
+    grid-template-columns: [header] 1fr [main] 3fr [mainend] 1fr [ending];
+    grid-template-rows: [header] 1fr[textArea] 6fr [main] 1fr [mainend] 1fr [ending];
+  }
 }
 
-.textArea{
-    grid-row: textArea / main;
-    grid-column: main / mainend;
-    
-    text-align: center;
+body {
+  background-color: lightgray;
+  display: grid;
+  grid-template-columns: [header] 1fr [main] 3fr [mainend] 1fr [ending];
+  grid-template-rows: [header] 1fr[textArea] 1fr [main] 5fr [mainend] 1fr [ending];
+
+  width: 100vw;
+  height: 100vh;
 }
 
+.textArea {
+  grid-row: textArea / main;
+  grid-column: main / mainend;
 
-.ballArea{
-   
-    grid-row: main / mainend;
-    grid-column: main / mainend;
-
-    background-color: black;
-    border-radius: 50%;
-    
-    width: 100%;
-    text-align: center;
+  text-align: center;
 }
 
-#content{
-    display: inline-block;
-    margin: 0 auto;
-    padding: 3px;
-    margin-top: 45%;
+.ballArea {
+  grid-row: main / mainend;
+  grid-column: main / mainend;
 
+  background-image: url("ball.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 
-    color: white;
+  text-align: center;
+
+  display: grid;
+
+  grid-template-rows: [beginning] 2fr [middleline] 1fr [endline];
+}
+
+#content {
+  grid-row: beginning/middleline;
+  text-align: center;
+  margin-top: 25%;
+  color: white;
+
+  font-size: 1.3em;
+  text-align: center;
+vertical-align: middle;
+line-height: 60%;
+}
+@media screen and (max-width: 992px) {
+    #content{
+
+    }
+  }
+
+.buttonarea {
+  grid-row: middleline / endline;
 }
